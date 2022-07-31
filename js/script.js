@@ -3,12 +3,12 @@ const clientsArr = [];
 
 class ClientGym {
     static type = 'Clients of GYM';
-    constructor (name, surname, strength, dexterity, stamina) {
-        this.name = name;
-        this.surname = surname;
-        this.strength = strength;
-        this.dexterity = dexterity;
-        this.stamina = stamina;
+    constructor (Name, Surname, Strength, Dexterity, Stamina) {
+        this.Name = Name;
+        this.Surname = Surname;
+        this.Strength = Strength;
+        this.Dexterity = Dexterity;
+        this.Stamina = Stamina;
     }
 }
 
@@ -24,31 +24,27 @@ clientsArr.map((client) => {
     `<div class="clients client-1">
         <div class="client-items">
             <div class="drag client-items__logo">
-                <span>${client.name.substr(0, 1)}${client.surname.substr(0, 1)}</span>
+                <span>${client.Name.substr(0, 1)}${client.Surname.substr(0, 1)}</span>
             </div>
-            <span class="drag client-items__name">${client.name} ${client.surname}</span>
+            <span class="drag client-items__name">${client.Name} ${client.Surname}</span>
             <div  class="client-items__char">
                 <button class="butt-char"></button>
             </div>
         </div>
         <div class="person-char">
-            <p class="strength">${'Strength:'} ${client.strength}</p>
-            <p class="dexterity">${'Dexterity:'} ${client.dexterity}</p>
-            <p class="stamina">${'Stamina:'} ${client.stamina}</p>  
+            <p class="strength">${'Strength:'} ${client.Strength}</p>
+            <p class="dexterity">${'Dexterity:'} ${client.Sexterity}</p>
+            <p class="stamina">${'Stamina:'} ${client.Stamina}</p>  
         </div>
     </div>`
     );
 })
 
-
-
 const personalAmount = document.querySelectorAll('.clients').length;
 const personalCounter = document.querySelector('.personal-counter');
 personalCounter.innerHTML = ' ' + personalAmount;
 
-
 const area = document.querySelector('.wrapper');
-
 const buttonExpand = document.querySelectorAll('.butt-char')
 
 document.querySelectorAll('.drag').forEach(client => {
@@ -137,8 +133,7 @@ document.querySelectorAll('.drag').forEach(client => {
     });
     parent.addEventListener("dragstart", function (event) {
         event.preventDefault();
-    });
-    
+    }); 
 })
 
 document.querySelectorAll('.butt-char').forEach(but => {
@@ -146,3 +141,8 @@ document.querySelectorAll('.butt-char').forEach(but => {
         but.closest('.clients').classList.toggle('expand');
     })
 })
+
+const training = document.querySelectorAll('.train');
+training.forEach(workout =>{
+    console.log(workout);
+}) 
