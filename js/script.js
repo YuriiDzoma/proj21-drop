@@ -1,3 +1,4 @@
+
 const allClients = [
     {Name:'Filip', Surname: 'Pain', Strength: 1, Dexterity: 1, Stamina:3},
     {Name:'Markiz', Surname: 'Forester', Strength: 1, Dexterity: 7, Stamina:5},
@@ -79,7 +80,7 @@ let addStamina;
 function upgradeStrength(obj,strengthChar,strengthUp) {
     addStrength = setInterval(function() {
     obj.Strength++;
-    // strengthChar.innerHTML = `${'Strength:'} ${obj.Strength}`;
+    strengthChar.innerHTML = `${'Strength:'} ${obj.Strength}`;
     strengthUp.innerHTML = `${'Upgrade Strength:'} ${obj.Strength} ${'/ 15 per 1 minute'}`;
     }, 4000);
 }
@@ -87,7 +88,7 @@ function upgradeStrength(obj,strengthChar,strengthUp) {
 function upgradeDexterity(obj,dexterityChar,dexterityUp) {
     addDexterity = setInterval(function() {
     obj.Dexterity++;
-    // dexterityChar.innerHTML = `${'Dexterity:'} ${obj.Dexterity}`;
+    dexterityChar.innerHTML = `${'Dexterity:'} ${obj.Dexterity}`;
     dexterityUp.innerHTML = `${'Upgrade Dexterity:'} ${obj.Dexterity} ${'/ 15 per 1 minute'}`;
     }, 4000);
 }
@@ -95,31 +96,22 @@ function upgradeDexterity(obj,dexterityChar,dexterityUp) {
 function upgradeStamina(obj,staminaChar,staminaUp) {
     addStamina = setInterval(function() {
     obj.Stamina++;
-    // staminaChar.innerHTML = `${'Stamina:'} ${obj.Stamina}`;
+    staminaChar.innerHTML = `${'Stamina:'} ${obj.Stamina}`;
     staminaUp.innerHTML = `${'Upgrade Stamina:'} ${obj.Stamina} ${'/ 15 per 1 minute'}`;
     }, 4000);
 }
 
-function stopUpgradeStrength() {
+function stopUpgradeStrength(obj) {
     clearInterval(addStrength);
 };
 
-function stopUpgradeDexterity() {
+function stopUpgradeDexterity(obj) {
     clearInterval(addDexterity);
 };
 
-function stopUpgradeStamina() {
+function stopUpgradeStamina(obj) {
     clearInterval(addStamina);
 };
-
-// obj.addEventListener('mousedown', (this)=> {
-//     this.stopUpgradeStrength();
-//     this.stopUpgradeDexterity();
-//     this.stopUpgradeStamina();
-// })
-
-
-
 
 document.querySelectorAll('.drag').forEach(client => {
     client.addEventListener("mousedown", function (raisedEvent) {
@@ -217,10 +209,8 @@ document.querySelectorAll('.drag').forEach(client => {
             if (trainingStrength) {
                 parent.classList.add('strength');
                 upgradeStrength(obj,strengthChar,strengthUp);
-                console.log('i znov')
             } else {
                 stopUpgradeStrength();
-                console.log('vot vono')
                 parent.classList.remove('strength');
                 parent.classList.remove('expand');
             }
@@ -244,6 +234,7 @@ document.querySelectorAll('.drag').forEach(client => {
             }
             document.removeEventListener('mousemove', onDragItem);
 
+
         }, { "once": true });
     });
     parent.addEventListener("dragstart", function (start) {
@@ -259,38 +250,3 @@ document.querySelectorAll('.butt-char').forEach(but => {
 })
 
 
-
-
-// const persons = document.querySelectorAll('.clients')
-// const trainings = document.querySelectorAll('.train');
-//     trainings.forEach(train => {
-//         console.log(train)
-//     })
-
-
-
-
-// const training = document.querySelectorAll('.train');
-// training.forEach(workout =>{
-//     workout.addEventListener()
-// }) 
-
-
-
-// class trainingApparat {
-//     constructor (Strength, Dexterity, Stamina) {
-//         this.Strength = Strength;
-//         this.Dexterity = Dexterity;
-//         this.Stamina = Stamina;
-//     }
-// }
-// const trainStrength = new trainingApparat ();
-// const trainDexterity = new trainingApparat ();
-// const trainStamina = new trainingApparat ();
-
-
-
-// const clientOne = new ClientGym ('Filip', 'Pain', 1, 1, 3);
-// const clientTwo = new ClientGym ('Markiz', 'Forester', 1, 3, 5);
-// const clientThree = new ClientGym ('Lex', 'Luger', 5, 4, 4);
-// clientsArr.push(clientOne,clientTwo,clientThree);
