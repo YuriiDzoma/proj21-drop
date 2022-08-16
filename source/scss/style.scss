@@ -97,7 +97,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid black;
-    margin: 0 18px;
+    margin: 2px 18px;
     align-items: flex-end;
     padding: 5px 15px 5px 0;
 }
@@ -125,6 +125,7 @@ h1 {
     max-height: 30px;
     transition: all 0.8s ease 0s;
     outline: 1px solid #6965656b;
+    margin: 10px auto;
 }
 
 .client-items {
@@ -157,6 +158,13 @@ h1 {
     }
 }
 
+.upgrade-char {
+    display: none;
+    font-size: 12px;
+    padding: 4px 0 8px 4px;
+}
+
+
 .butt-char {
     width: 22px;
     height: 23px;
@@ -176,6 +184,7 @@ h1 {
         height: 1px;
         transform: translateX(-50%);
     }
+
     &:after {
         content: '';
         position: absolute;
@@ -210,13 +219,75 @@ h1 {
     }
 }
 
-.client-1.active {
+.up-strength {
+    display: none;
 }
-.client-2.active {
+
+.up-dexterity {
+    display: none;
 }
-.client-3.active {
+
+.up-stamina {
+    display: none;
 }
-.client-4.active {
+
+.strength {
+    max-height: none;
+
+    .up-strength {
+        display: block;
+    }
+    
+    .butt-char {
+        display: none;
+    }
+
+    .person-char {
+        display: none;
+    }
+    .upgrade-char {
+        display: block;
+    }
+}
+
+.dexterity {
+    max-height: none;
+
+    .up-dexterity {
+        display: block;
+    }
+    
+    .butt-char {
+        display: none;
+    }
+
+    .person-char {
+        display: none;
+    }
+
+    .upgrade-char {
+        display: block;
+    }
+}
+
+.stamina {
+    max-height: none;
+
+    .up-stamina {
+        display: block;
+    }
+    
+    .butt-char {
+        display: none;
+    }
+    
+    .person-char {
+        display: none;
+    }
+    
+    .upgrade-char {
+        display: block;
+    }
 }
 
 .trainig-1 {
@@ -227,10 +298,6 @@ h1 {
     transition: all 0.3s ease 0s;
 }
 
-.trainig-1.active {
-    box-shadow: inset 0px 0px 10px 5px #333f2d8a;
-}
-
 .trainig-2 {
     width: 556px;
     height: 131px;
@@ -239,20 +306,12 @@ h1 {
     transition: all 0.3s ease 0s;
 }
 
-.trainig-2.active {
-    box-shadow: inset 0px 0px 10px 5px #333f2d8a;
-}
-
 .trainig-3 {
     width: 556px;
     height: 131px;
     background-color: white;
     border-radius: 30px;
     transition: all 0.3s ease 0s;
-}
-
-.trainig-3.active {
-    box-shadow: inset 0px 0px 10px 5px #333f2d8a;
 }
 
 .right-container {
@@ -267,3 +326,12 @@ h1 {
     align-items: center;
 }
 
+.train-header {
+    margin: 20px 26px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid black;
+
+    &__name {
+        font-size: 16px;
+    }
+}
