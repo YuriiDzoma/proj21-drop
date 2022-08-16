@@ -16,15 +16,6 @@ class ClientGym {
         this.Dexterity = Dexterity;
         this.Stamina = Stamina;
     } 
-    get upgradeStrength() {
-        return this.Strength + 1;
-    }
-    get upgradeDexterity() {
-        return this.Dexterity + 1;
-    }
-    get upgradeStamina() {
-        return this.Stamina + 1;
-    }
 }
 
 const clientsArr = [];
